@@ -22,9 +22,7 @@ while count < len(mon):
     else:
         if temp > res:
             res = temp
-            temp = 0
-        else:
-            temp = 0
+        temp = 0
     count = count + 1
 print(res)
 
@@ -39,16 +37,32 @@ coins = [random.randint(0,1) for _ in range(a)]
 i = 0
 heads = 0
 tails = 0
-while i < len(coins):
+print(coins)
+while i < a:
     if coins[i] == 1:
-        heads = heads + 1
+        heads += 1
     else:
-        tails = tails + 1
-    i = i + 1
+        tails += 1
+    i += 1
 if heads > tails:
     print(f"Нужно перевернуть {tails} монет(ы).")
 else:
     print(f"Нужно перевернуть {heads} монет(ы).")
+
+# import random
+# n = int(input("Введите общее число монет :  "))
+# a = 0
+# b = 0
+# for i in range(n):
+#     temp = random.randint(0, 1)
+#     print(temp, end=' ')
+#     if temp > 0: a += 1
+#     else: b += 1
+# print()
+# if a > b:
+#     print(f'Нужно перевернуть {b} монет')
+# else:
+#     print(f'Нужно перевернуть {a} монет')
 
 '''
 Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница. Петя помогает Кате по математике.
@@ -66,6 +80,23 @@ elif discr == 0:
     x = -s / (2 * -1)
     print(f"Оба числа = {int(x)}")
 
+# import random
+# a = int(random.randint(1, 1000))
+# b = int(random.randint(1, 1000))
+# s = a + b
+# p = a * b
+# print(a, b)
+# print(f"Сумма двух чисел {s}, произведение двух чисел {p}")
+# count = 0
+# for x in range(s):
+#     y = s - x
+#     if x + y == s and x * y == p:
+#         count += 1
+#         print(x, y)
+#         break
+# if count == 0:
+#     print('Вы ввели не корректные данные!')
+
 '''
 Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числаN.
 '''
@@ -75,6 +106,7 @@ d = 1
 while(d < check):
     print(d)
     d*=2
+
 
 
 '''
@@ -98,8 +130,6 @@ while countd < len(weather):
     else:
         if tempd > resd:
             resd = tempd
-            tempd = 0
-        else:
-            tempd = 0
+        tempd = 0
     countd = countd + 1
 print(resd)
