@@ -11,13 +11,16 @@ Sample Input 1:
 Sample Output 1:
 3
 '''
+# for i in range(7):
+#     temp = random.choice(['O', 'P'])
+#     print(temp, end=' ')
 mon = list(input("Введите последовательность: "))
 print(mon, type(mon))
 count = 0
 temp = 0
 res = 0
 while count < len(mon):
-    if mon[count] == "р":
+    if mon[count] == "р" or "Р":
         temp = temp + 1
     else:
         if temp > res:
@@ -106,8 +109,6 @@ d = 1
 while(d < check):
     print(d)
     d*=2
-
-
 
 '''
 Пользователь вводит число N – общее количество
