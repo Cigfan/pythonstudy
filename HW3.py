@@ -7,27 +7,20 @@ m - кол-во элементов второго множества.
 Затем подаются элементы каждого множества через пробел в виде строки. ! Писать input() не надо
 '''
 x = str(input("Введите размеры массивов через пробел: ")).split()
-# print(x[0])
-# print(x[1])
 arr_1 = [random.randint(1, 9) for _ in range(int(x[0]))]
 arr_2 = [random.randint(1, 9) for _ in range(int(x[1]))]
 print(arr_1)
 print(arr_2)
-# print(len(arr_1))
-# print(max(x))
 arr_res = [] 
 arr_ans = [] # запасной на всякий случай
 for i in arr_1:
     if i in arr_2:
         arr_res.append(i) # нашли все одинковые элементы
-# print(arr_res)
 if len(arr_res) > 1:
     arr_res.sort() # отсортировали
-    # print(arr_res)
     for x in arr_res: # перезаписываем, откидывая повторы
         if x not in arr_ans:
             arr_ans.append(x)
-    # print(arr_ans)
     for z in arr_ans:
         print(z, end=" ") # печать в одну строчку через пробел
 else:
