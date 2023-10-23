@@ -9,22 +9,20 @@ m - кол-во элементов второго множества.
 x = str(input("Введите размеры массивов через пробел: ")).split()
 arr_1 = [random.randint(1, 9) for _ in range(int(x[0]))]
 arr_2 = [random.randint(1, 9) for _ in range(int(x[1]))]
-print(arr_1)
-print(arr_2)
-arr_res = [] 
-arr_ans = [] # запасной на всякий случай
-for i in arr_1:
-    if i in arr_2:
-        arr_res.append(i) # нашли все одинковые элементы
-if len(arr_res) > 1:
-    arr_res.sort() # отсортировали
-    for x in arr_res: # перезаписываем, откидывая повторы
-        if x not in arr_ans:
-            arr_ans.append(x)
-    for z in arr_ans:
-        print(z, end=" ") # печать в одну строчку через пробел
-else:
-    print(arr_res[0])
+# print(arr_1)
+# print(arr_2)
+# arr_res = [] 
+# arr_ans = []
+# for i in arr_1:
+#     if i in arr_2:
+#         arr_res.append(i) # нашли все одинковые элементы
+# arr_res.sort() # отсортировали
+# for x in arr_res: # перезаписываем, откидывая повторы
+#     if x not in arr_ans:
+#         arr_ans.append(x)
+# for z in arr_ans:
+#     print(z, end=" ") # печать в одну строчку через пробел
+print("\n", set(arr_1) & set(arr_2))
 
 '''
 Урожайность черничных кустов представлена в виде списка arr, где arr[i] - это урожайность (количество ягод) i-го куста.
@@ -38,14 +36,10 @@ else:
 bush = int(input("\nВведите количество кустов: "))
 tot = [random.randint(1, 20) for _ in range(bush)]
 print(tot)
-ctdw = 0
 summ = 0
 i = 0
-while ctdw < bush - 2:
-    if (tot[i] + tot[i+1] + tot[i+2]) > summ:
-        summ =  (tot[i] + tot[i+1] + tot[i+2])
-        i += 1
-        ctdw += 1
-    else:
-        ctdw += 1
+for i in range(bush):
+    if (tot[i] + tot[i-1] + tot[i-2]) > summ:
+        summ = (tot[i] + tot[i-1] + tot[i-2])
 print(summ)
+
